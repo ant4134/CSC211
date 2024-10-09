@@ -1,0 +1,44 @@
+
+public class Assignment_4 {
+
+	public static void main(String[] args) {
+		Rectangle r1 = new Rectangle();
+		r1.setSide(4);
+		System.out.print(r1.getSide());
+	}
+}
+
+class Shape {
+	private int num_of_sides;
+
+	public Shape() {
+		this.num_of_sides = 0;
+	}
+
+	public Shape(int num_of_sides) {
+		this.num_of_sides = num_of_sides;
+	}
+
+	public void setSide(int sides) {
+		this.num_of_sides = sides;
+	}
+
+	public int getSide() {
+		return this.num_of_sides;
+	}
+}
+
+class Circle extends Shape {
+
+	public Circle() {
+		super();
+	}
+}
+
+class Rectangle extends Shape {
+
+	public Rectangle() {
+		super();
+	}
+
+}
