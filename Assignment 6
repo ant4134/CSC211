@@ -1,0 +1,77 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class Assignment_6 extends Frame {
+	// initializing using constructor
+	Assignment_6() {
+
+		// creating a Frame
+		Frame f = new Frame();
+
+		// creating a Label
+		Label l = new Label("Employee id:");
+
+		// creating a Button
+		Button b = new Button("Submit");
+
+		b.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent a) {
+				System.out.println("Submitted!");
+				f.dispose();
+			}
+		});
+
+		// creating a TextField
+		TextField t = new TextField();
+
+		// setting position of above components in the frame
+		l.setBounds(20, 80, 80, 30);
+		t.setBounds(20, 100, 80, 30);
+		b.setBounds(100, 100, 80, 30);
+
+		// adding components into frame
+		f.add(b);
+		f.add(l);
+		f.add(t);
+
+		// frame size 300 width and 300 height
+		f.setSize(400, 300);
+
+		// setting the title of frame
+		f.setTitle("Employee info");
+
+		// no layout
+		f.setLayout(null);
+
+		// setting visibility of frame
+		f.setVisible(true);
+
+		// creates a button that closes the application, and adds it to the frame.
+		Button e = new Button("Exit");
+		e.setBounds(100, 130, 80, 30);
+		f.add(e);
+
+		e.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Closed the application.");
+				f.dispose();
+			}
+
+		});
+
+		// closes window when the x is clicked.
+		f.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				f.dispose();
+			}
+		});
+	}
+
+	// main method
+	public static void main(String args[]) {
+
+		// creating instance of Frame class
+		Assignment_6 awt_obj = new Assignment_6();
+	}
+
+}
