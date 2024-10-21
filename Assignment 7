@@ -1,0 +1,102 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Assignment_7 {
+
+	public static void main(String[] args) {
+		// create the Frame and FlowLayout, and make it visible.
+		JFrame frame = new JFrame("User Registration");
+		frame.setLayout(new FlowLayout());
+		frame.setSize(new Dimension(500, 330));
+		frame.setResizable(false);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		// Create the Labels.
+		JLabel nameLabel = new JLabel("Enter your name: ");
+		nameLabel.setVisible(true);
+		nameLabel.setPreferredSize(new Dimension(100, 100));
+		nameLabel.setHorizontalAlignment(JLabel.CENTER);
+
+		JLabel emailLabel = new JLabel("Enter your email: ");
+		emailLabel.setVisible(true);
+		emailLabel.setPreferredSize(new Dimension(100, 100));
+		emailLabel.setHorizontalAlignment(JLabel.CENTER);
+
+		JLabel passwordLabel = new JLabel("Enter your password: ");
+		passwordLabel.setVisible(true);
+		passwordLabel.setPreferredSize(new Dimension(125, 100));
+		passwordLabel.setHorizontalAlignment(JLabel.CENTER);
+
+		JLabel confirmPasswordLabel = new JLabel("Confirm your password: ");
+		confirmPasswordLabel.setVisible(true);
+		confirmPasswordLabel.setPreferredSize(new Dimension(145, 100));
+		confirmPasswordLabel.setHorizontalAlignment(JLabel.CENTER);
+
+		// create the TextFields.
+		JTextField nameTextField = new JTextField();
+		nameTextField.setVisible(true);
+		nameTextField.setPreferredSize(new Dimension(75, 25));
+
+		JTextField emailTextField = new JTextField();
+		emailTextField.setVisible(true);
+		emailTextField.setPreferredSize(new Dimension(75, 25));
+
+		JTextField passwordTextField = new JTextField();
+		passwordTextField.setVisible(true);
+		passwordTextField.setPreferredSize(new Dimension(75, 25));
+
+		JTextField confirmPasswordTextField = new JTextField();
+		confirmPasswordTextField.setVisible(true);
+		confirmPasswordTextField.setPreferredSize(new Dimension(75, 25));
+
+		// create the buttons, and add their actionListeners
+		JButton submitButton = new JButton("Submit");
+		submitButton.setPreferredSize(new Dimension(75, 40));
+		submitButton.setHorizontalAlignment(JButton.CENTER);
+		submitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (nameTextField.getText().isEmpty() || emailTextField.getText().isEmpty()
+						|| passwordTextField.getText().isEmpty() || confirmPasswordTextField.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(frame, "ERROR: One or more fields are empty.");
+				} else {
+					JOptionPane.showMessageDialog(frame,
+							"The name you entered was: " + nameTextField.getText() + "\nThe email you entered was: "
+									+ emailTextField.getText() + "\nThe password you entered was: "
+									+ passwordTextField.getText());
+				}
+
+			}
+		});
+
+		JButton clearButton = new JButton("Clear");
+		clearButton.setPreferredSize(new Dimension(75, 40));
+		clearButton.setHorizontalAlignment(JButton.CENTER);
+		clearButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e1) {
+				nameTextField.setText("");
+				emailTextField.setText("");
+				passwordTextField.setText("");
+				confirmPasswordTextField.setText("");
+			}
+		});
+
+		// add components to the frame.
+		frame.add(nameLabel);
+		frame.add(nameTextField);
+		frame.add(emailLabel);
+		frame.add(emailTextField);
+		frame.add(passwordLabel);
+		frame.add(passwordTextField);
+		frame.add(confirmPasswordLabel);
+		frame.add(confirmPasswordTextField);
+		frame.add(submitButton);
+		frame.add(clearButton);
+
+		// make the frame visible.
+		frame.setVisible(true);
+
+	}
+
+}
