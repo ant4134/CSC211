@@ -1,0 +1,83 @@
+package Assignment_9;
+
+public class CPU {
+	private static String brand;
+	private static String cpu_type;
+	private static int year;
+	private static double speed;
+	private static double price;
+
+	// default constructor.
+	public CPU() {
+		brand = "default";
+		cpu_type = "default";
+		year = 0;
+		speed = 0;
+		price = 0;
+	}
+
+	// constructor with parameters.
+	public CPU(String b, String c, int y, double s, double p) {
+		brand = b;
+		cpu_type = c;
+		year = y;
+		speed = s;
+		price = p;
+	}
+
+	// setters and getters.
+	public String getBrand() {
+		return brand;
+	}
+
+	public static void setBrand(String brand) {
+		CPU.brand = brand;
+	}
+
+	public static String getCpu_type() {
+		return cpu_type;
+	}
+
+	public static void setCpu_type(String cpu_type) {
+		CPU.cpu_type = cpu_type;
+	}
+
+	public static int getYear() {
+		return year;
+	}
+
+	public static void setYear(int year) {
+		CPU.year = year;
+	}
+
+	public static double getSpeed() {
+		return speed;
+	}
+
+	public static void setSpeed(double speed) {
+		CPU.speed = speed;
+	}
+
+	public static double getPrice() {
+		return price;
+	}
+
+	public static void setPrice(double price) {
+		CPU.price = price;
+	}
+
+	// returns a String with the information for the CPU.
+	public String showSystemInfo() {
+		String info = "---CPU Information---\n" + "   Brand: " + brand + "\n   CPU type: " + cpu_type + "\n   Year: "
+				+ year + "\n   Speed: " + speed + " GHz\n   Price: " + price + "\n---------------------";
+		return info;
+	}
+
+	// Test that the CPU class works as intended.
+	public static void main(String[] args) {
+		CPU cpu = new CPU();
+		System.out.print(cpu.showSystemInfo());
+
+	}
+
+}
