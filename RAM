@@ -1,0 +1,84 @@
+package Assignment_9;
+
+public class RAM extends GPU {
+	private static String brand;
+	private static String ram_type;
+	private static int year;
+	private static double size;
+	private static double price;
+
+	// default constructor.
+	public RAM() {
+		brand = "default";
+		ram_type = "default";
+		year = 0;
+		size = 0;
+		price = 0;
+	}
+
+	// constructor with parameters.
+	public RAM(String b, String r, int y, double s, double p) {
+		brand = b;
+		ram_type = r;
+		year = y;
+		size = s;
+		price = p;
+	}
+
+	// setters and getters.
+	public String getBrand() {
+		return brand;
+	}
+
+	public static void setBrand(String brand) {
+		RAM.brand = brand;
+	}
+
+	public static String getRam_type() {
+		return ram_type;
+	}
+
+	public static void setRam_type(String ram_type) {
+		RAM.ram_type = ram_type;
+	}
+
+	public static int getYear() {
+		return year;
+	}
+
+	public static void setYear(int year) {
+		RAM.year = year;
+	}
+
+	public static double getSize() {
+		return size;
+	}
+
+	public static void setSize(double size) {
+		RAM.size = size;
+	}
+
+	public static double getPrice() {
+		return price;
+	}
+
+	public static void setPrice(double price) {
+		RAM.price = price;
+	}
+
+	// returns a String with the information for the GPU.
+	@Override
+	public String showSystemInfo() {
+		String info = "---RAM Information---\n" + "   Brand: " + brand + "\n   RAM type: " + ram_type + "\n   Year: "
+				+ year + "\n   Size: " + size + "Gb\n   Price: " + price + "\n---------------------";
+		return info;
+	}
+
+	// Test that the RAM class works as intended.
+	public static void main(String[] args) {
+		RAM ram = new RAM();
+		System.out.println(ram.showSystemInfo());
+
+	}
+
+}
