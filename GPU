@@ -1,0 +1,84 @@
+package Assignment_9;
+
+public class GPU extends CPU {
+	private static String brand;
+	private static String gpu_type;
+	private static int year;
+	private static double vram;
+	private static double price;
+
+	// default constructor.
+	public GPU() {
+		brand = "default";
+		gpu_type = "default";
+		year = 0;
+		vram = 0;
+		price = 0;
+	}
+
+	// constructor with parameters.
+	public GPU(String b, String g, int y, double v, double p) {
+		brand = b;
+		gpu_type = g;
+		year = y;
+		vram = v;
+		price = p;
+	}
+
+	// setters and getters.
+	public String getBrand() {
+		return brand;
+	}
+
+	public static void setBrand(String brand) {
+		GPU.brand = brand;
+	}
+
+	public static String getGpu_type() {
+		return gpu_type;
+	}
+
+	public static void setGpu_type(String gpu_type) {
+		GPU.gpu_type = gpu_type;
+	}
+
+	public static int getYear() {
+		return year;
+	}
+
+	public static void setYear(int year) {
+		GPU.year = year;
+	}
+
+	public static double getVram() {
+		return vram;
+	}
+
+	public static void setVram(double vram) {
+		GPU.vram = vram;
+	}
+
+	public static double getPrice() {
+		return price;
+	}
+
+	public static void setPrice(double price) {
+		GPU.price = price;
+	}
+
+	// returns a String with the information for the GPU.
+	@Override
+	public String showSystemInfo() {
+		String info = "---GPU Information---\n" + "   Brand: " + brand + "\n   GPU type: " + gpu_type + "\n   Year: "
+				+ year + "\n   VRAM: " + vram + " Gb\n   Price: " + price + "\n---------------------";
+		return info;
+	}
+
+	// Test that the GPU class works as intended.
+	public static void main(String[] args) {
+		GPU gpu = new GPU();
+		System.out.println(gpu.showSystemInfo());
+
+	}
+
+}
