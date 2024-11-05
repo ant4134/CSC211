@@ -1,0 +1,51 @@
+package Assignment_9;
+
+public class Computer extends RAM {
+	private static String brand;
+	private static double price;
+	private static CPU cpu;
+	private static GPU gpu;
+	private static RAM ram;
+
+	// default constructor.
+	public Computer() {
+		brand = "default";
+		price = 0;
+		cpu = new CPU();
+		gpu = new GPU();
+		ram = new RAM();
+	}
+
+	// constructor with parameters.
+	public Computer(String b, double p, CPU c, GPU g, RAM r) {
+		brand = b;
+		price = p;
+		cpu = c;
+		gpu = g;
+		ram = r;
+	}
+
+	@Override
+	public String showSystemInfo() {
+		String info = "---Computer Information---\n" + "   Brand: " + brand + "\n   CPU: " + cpu.getBrand()
+				+ "\n   RAM: " + ram.getBrand() + "\n   GPU: " + gpu.getBrand() + "\n   Price: " + price
+				+ "\n---------------------";
+		return info;
+	}
+
+	// Test that the Computer class works as intended.
+	public static void main(String[] args) {
+		Computer pc = new Computer();
+		System.out.println(pc.showSystemInfo());
+
+		// create individual parts and use them to make a pc (composition).
+		CPU cpu1 = new CPU("Intel", "i7", 2023, 3.6, 500);
+		GPU gpu1 = new GPU("NVIDIA", "GeForce 3070", 2022, 8, 1000);
+		RAM ram1 = new RAM("Corsair", "Vengenance", 2024, 32, 125);
+
+		Computer pc2 = new Computer("Alienware", 2500, cpu1, gpu1, ram1);
+		System.out.println(pc2.showSystemInfo());
+
+	}
+
+}
